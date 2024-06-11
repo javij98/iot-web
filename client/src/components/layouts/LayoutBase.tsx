@@ -46,60 +46,70 @@ const App: React.FC = () => {
 
   return (
     <>
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <div className='demo-logo' />
-        <Menu
-          theme='dark'
-          mode='horizontal'
-          defaultSelectedKeys={['1']}
-          items={items1}
-          style={{ flex: 1, minWidth: 0 }}
-        />
-      </Header>
-      <Layout>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Header style={{ display: 'flex', alignItems: 'center' }}>
+          <div className='demo-logo' />
+          <Menu
+            theme='dark'
+            mode='horizontal'
+            defaultSelectedKeys={['1']}
+            items={items1}
+            style={{ flex: 1, minWidth: 0 }}
+          />
+        </Header>
         <Layout>
-          <Sider
-            collapsible
-            collapsed={collapsed}
-            onCollapse={(value) => setCollapsed(value)}
-            width={200}
-            style={{ background: colorBgContainer }}
-          >
-            <Menu
-              mode='inline'
-              theme='light'
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              style={{ height: '100%', borderRight: 0 }}
-              items={items2}
-            />
-          </Sider>
-          <Header style={{ padding: 0, background: colorBgContainer }} />
-          <Content style={{ margin: '0 16px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div
-              style={{
-                padding: 24,
-                margin: 0,
-
-                minHeight: 360,
-                background: colorBgContainer,
-                borderRadius: borderRadiusLG,
-              }}
+          <Layout>
+            <Sider
+              collapsible
+              
+              collapsed={collapsed}
+              onCollapse={(value) => setCollapsed(value)}
+              width={200}
+              style={{ background: colorBgContainer }}
             >
-              Bill is a cat.
-            </div>
-            <Footer style={{ textAlign: 'center' }}>
-              Ant Design ©{new Date().getFullYear()} Created by Ant UED
-            </Footer>
-          </Content>
+              <Menu
+                mode='inline'
+                theme='light'
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                style={{ height: '100%', borderRight: 0 }}
+                items={items2}
+              />
+            </Sider>
+            <Header style={{ padding: 0, background: colorBgContainer }} />
+            <Content style={{ margin: '0 16px' }}>
+              <Breadcrumb style={{ margin: '16px 0' }}>
+                <Breadcrumb.Item>User</Breadcrumb.Item>
+                <Breadcrumb.Item>Bill</Breadcrumb.Item>
+              </Breadcrumb>
+              <div
+                style={{
+                  padding: 24,
+                  position: 'relative',
+                  margin: 0,
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  minHeight: 700,
+                  background: colorBgContainer,
+                  borderRadius: borderRadiusLG,
+                }}
+              >
+                Bill is a cat.
+              </div>
+            </Content>
+          </Layout>
         </Layout>
+              <Footer style={{
+                textAlign: 'center',
+                left: 0,
+                bottom: 0,
+                width: '100%',
+              }}>
+                Ant Design ©{new Date().getFullYear()} Created by Ant UED
+              </Footer>
       </Layout>
-    </Layout>
     </>
   )
 }
