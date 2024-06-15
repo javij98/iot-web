@@ -1,7 +1,7 @@
 import './App.css'
 import SideBar from './components/SideBar'
 import { DashboardBase } from './components/dashboards/DashboardBase'
-import LayoutBase from './components/layouts/LayoutBase'
+import LayoutBaseModified from './components/layouts/LayoutBaseModified'
 import LayoutNavbarAndContent from './components/layouts/LayoutNavbarAndContent'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <div>
         {/* <SideBar /> */}
         {/* <DashboardBase /> */}
-        <LayoutBase />
+        <LayoutBaseModified />
         {/* <LayoutNavbarAndContent /> */}
       </div>
     </>

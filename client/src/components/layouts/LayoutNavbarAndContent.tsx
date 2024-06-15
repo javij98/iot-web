@@ -26,7 +26,7 @@ const LayoutNavbarAndContent: React.FC = () => {
       >
         <div className="demo-logo" />
         <Menu
-          theme="dark"
+          theme="light"
           mode="horizontal"
           defaultSelectedKeys={['1']}
           items={items}

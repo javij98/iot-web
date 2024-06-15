@@ -37,7 +37,7 @@ const items2: MenuProps['items'] = [
   }
 })
 
-const App: React.FC = () => {
+const LayoutBaseModified: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false)
 
   const {
@@ -46,26 +46,37 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Layout style={{ minHeight: '100vh' }}>
-        <Header style={{ display: 'flex', alignItems: 'center' }}>
+      <Layout>
+        {/* <Header
+          style={{
+            backgroundColor: 'white',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
           <div className='demo-logo' />
           <Menu
-            theme='dark'
+            theme='light'
             mode='horizontal'
             defaultSelectedKeys={['1']}
             items={items1}
             style={{ flex: 1, minWidth: 0 }}
           />
-        </Header>
+        </Header> */}
         <Layout>
           <Layout>
             <Sider
               collapsible
-              
               collapsed={collapsed}
               onCollapse={(value) => setCollapsed(value)}
               width={200}
-              style={{ background: colorBgContainer }}
+              style={{
+                background: colorBgContainer,
+                paddingRight: 0,
+                paddingBottom: 0,
+                position: 'static',
+                zIndex: 'auto'
+              }}
             >
               <Menu
                 mode='inline'
@@ -101,17 +112,21 @@ const App: React.FC = () => {
             </Content>
           </Layout>
         </Layout>
-              <Footer style={{
-                textAlign: 'center',
-                left: 0,
-                bottom: 0,
-                width: '100%',
-              }}>
-                Ant Design ©{new Date().getFullYear()} Created by Ant UED
-              </Footer>
       </Layout>
+        <Footer
+          style={{
+            textAlign: 'center',
+            left: 0,
+            bottom: 0,
+            width: '100%',
+            color: '#fff',
+            backgroundColor: '#4096ff'
+          }}
+        >
+          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+        </Footer>
     </>
   )
 }
 
-export default App
+export default LayoutBaseModified
