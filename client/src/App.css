@@ -3,3 +3,9 @@
   padding: 0;
   height: 100%;
 } */
+
+.menu-icon {
+  width: 16px;  /* Ajusta el tamaño a tus necesidades */
+  height: 16px; /* Ajusta el tamaño a tus necesidades */
+  margin-right: 8px; /* Opcional: espacio entre el icono y el texto */
+}

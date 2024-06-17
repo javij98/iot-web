@@ -1,14 +1,17 @@
-import { Menu } from 'antd'
-import { HomeIcon, ArrowDownRightIcon } from '@heroicons/react/24/outline'
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import {
+  AppstoreOutlined,
+  HomeTwoTone,
+  SettingOutlined,
+} from '@ant-design/icons'
+import { MenuProps } from 'antd'
 
-type MenuItem = Required<MenuProps>['items'][number];
+type MenuItem = Required<MenuProps>['items'][number]
 
 const items: MenuItem[] = [
   {
     key: '1',
-    icon: <MailOutlined />,
-    label: 'Navigation One',
+    icon: <HomeTwoTone />,
+    label: 'Home',
     children: [
       { key: '11', label: 'Option 1' },
       { key: '12', label: 'Option 2' },
@@ -54,14 +57,6 @@ const items: MenuItem[] = [
       { key: '34', label: 'Option 4' },
     ],
   },
-];
+]
 
-export function MenuList () {
-  return (
-    <Menu>
-      <Menu.Item key="1" icon={<HomeIcon />}>nav 1</Menu.Item>
-      <Menu.Item key="2">nav 2</Menu.Item>
-      <Menu.Item key="3">nav 3</Menu.Item>
-    </Menu>
-  )
-}
+export { items };

@@ -1,5 +1,5 @@
 import './App.css'
-import { MenuList } from './components/MenuList'
+import { MenuList } from './components/SideBarMenu'
 import SideBar from './components/SideBar'
 import { DashboardBase } from './components/dashboards/DashboardBase'
 import LayoutBaseModified from './components/layouts/LayoutBaseModified'
