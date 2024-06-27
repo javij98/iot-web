@@ -1,9 +1,5 @@
 import './App.css'
-import { MenuList } from './components/SideBarMenu'
-import SideBar from './components/SideBar'
-import { DashboardBase } from './components/dashboards/DashboardBase'
-import LayoutBaseModified from './components/layouts/LayoutBaseModified'
-import LayoutNavbarAndContent from './components/layouts/LayoutNavbarAndContent'
+import { SideBarMenu } from './components/SideBarMenu'
 
 function App() {
   return (
@@ -13,7 +9,7 @@ function App() {
         {/* <DashboardBase /> */}
         {/* <LayoutBaseModified /> */}
         {/* <LayoutNavbarAndContent /> */}
-        <MenuList />
+        <SideBarMenu />
       </div>
     </>
   )

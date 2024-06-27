@@ -5,7 +5,48 @@
 } */
 
 .menu-icon {
-  width: 16px;  /* Ajusta el tamaño a tus necesidades */
+  width: 16px; /* Ajusta el tamaño a tus necesidades */
   height: 16px; /* Ajusta el tamaño a tus necesidades */
   margin-right: 8px; /* Opcional: espacio entre el icono y el texto */
+}
+
+.sidebar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* font-size: 1rem; */
+  position: sticky;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 10px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: rgb(127, 180, 171);
+}
+
+.header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-right: 10px;
+}
+
+.header {
+  display: flex;
+  alignitems: center;
+  background-color: #111a2c;
 }

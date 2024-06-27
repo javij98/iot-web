@@ -1,16 +1,18 @@
 import {
   AppstoreOutlined,
-  HomeTwoTone,
-  SettingOutlined,
-} from '@ant-design/icons'
-import { MenuProps } from 'antd'
+  HomeOutlined,
+  SettingOutlined
+} from '@ant-design/icons';
+import { MenuProps } from 'antd';
 
+// Type defined in Ant Design library
 type MenuItem = Required<MenuProps>['items'][number]
 
-const items: MenuItem[] = [
+// Sidebar items
+const siderItems: MenuItem[] = [
   {
     key: '1',
-    icon: <HomeTwoTone />,
+    icon: <HomeOutlined />,
     label: 'Home',
     children: [
       { key: '11', label: 'Option 1' },
@@ -59,4 +61,9 @@ const items: MenuItem[] = [
   },
 ]
 
-export { items };
+const headerItems: MenuProps['items'] = ['1', '2', '3'].map((key) => ({
+  key,
+  label: `nav ${key}`,
+}));
+
+export { headerItems, siderItems };
