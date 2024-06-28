@@ -47,6 +47,6 @@
 
 .header {
   display: flex;
-  alignitems: center;
+  align-items: center;
   background-color: #111a2c;
 }

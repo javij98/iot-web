@@ -1,5 +1,5 @@
 import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
-import { Button, Divider, Layout, Menu, MenuTheme } from 'antd'
+import { Button, Divider, Flex, Layout, Menu, MenuTheme } from 'antd'
 import Sider from 'antd/es/layout/Sider'
 import { Header } from 'antd/es/layout/layout'
 import { useState } from 'react'
@@ -8,34 +8,48 @@ import { headerItems, siderItems } from '../constants'
 import { HeaderLogo } from './HeaderLogo'
 import { ToggleThemeButton } from './ToggleThemeButton'
 import Title from 'antd/es/typography/Title'
-import { headerTheme } from '../types'
 
 export function SideBarMenu() {
   const [collapsed, setCollapsed] = useState(false)
   const [theme, setTheme] = useState<MenuTheme>('light')
-  const [headerTheme, setheaderTheme] = useState<headerTheme>('light')
 
   // Collapse the sidebar
   const toggleCollapsed = () => {
     setCollapsed(!collapsed)
   }
 
-  // Toggle the theme
-  // const toggleTheme = (value: boolean) => {
-  //   setTheme(value ? 'dark' : 'light')
-  // }
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
   }
 
-  
+  const backgroundColorHeader = theme === 'light' ? '#fff' : '#131629'
+
+  const titleTheme = theme === 'light' ? '#000000' : '#fff'
+
+  // If you want to change the button type when theme is switched
+  // const sidebarToggleButton = theme === 'light' ? 'text' : 'primary'
 
   return (
     <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center',  }}>
+      <Header
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          backgroundColor: backgroundColorHeader,
+          position: 'sticky',
+          width: '100%',
+          top: 0,
+          zIndex: 1,
+          alignContent: 'center'
+        }}
+      >
         <HeaderLogo />
         <Title
-          style={{ color: 'white', marginRight: '10px', marginBottom: '0px' }}
+          style={{
+            color: titleTheme,
+            marginRight: '10px',
+            marginBottom: '0px',
+          }}
           level={4}
         >
           IoT Web
@@ -53,31 +67,36 @@ export function SideBarMenu() {
           style={{
             overflow: 'auto',
             height: '100vh',
-            // position: 'fixed',
+            borderRight: 0,
+            position: 'static',
             left: 0,
             top: 0,
             bottom: 0,
           }}
           width={300}
           theme={theme}
-          // collapsible
+          collapsible
+          onCollapse={toggleCollapsed}
           collapsed={collapsed}
         >
           <Button
-            type='text'
+            type='primary'
+            ghost
             onClick={toggleCollapsed}
-            style={{ marginBottom: 0, marginTop: 16, marginLeft: 16 }}
+            style={{ marginBottom: 0, marginTop: 16, marginLeft: 9 }}
           >
-            {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            <Flex gap='small'>
+              {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            </Flex>
           </Button>
+          <Divider style={{ margin: '16px 0' }} />
           <Menu
             className='sidebar'
             items={siderItems}
             mode='inline'
             theme={theme} // This is not necessary because it uses sider's theme
             inlineCollapsed={collapsed}
-          >
-          </Menu>
+          ></Menu>
           <ToggleThemeButton theme={theme} toggleTheme={toggleTheme} />
         </Sider>
       </Layout>
