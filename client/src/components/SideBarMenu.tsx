@@ -40,7 +40,7 @@ export function SideBarMenu() {
           width: '100%',
           top: 0,
           zIndex: 1,
-          alignContent: 'center'
+          alignContent: 'center',
         }}
       >
         <HeaderLogo />
@@ -79,7 +79,7 @@ export function SideBarMenu() {
           onCollapse={toggleCollapsed}
           collapsed={collapsed}
         >
-          <Button
+          {/* <Button
             type='primary'
             ghost
             onClick={toggleCollapsed}
@@ -88,7 +88,12 @@ export function SideBarMenu() {
             <Flex gap='small'>
               {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             </Flex>
-          </Button>
+          </Button> */}
+          <ToggleThemeButton
+            style={{ marginBottom: 0, marginTop: 16, marginLeft: 9 }}
+            theme={theme}
+            toggleTheme={toggleTheme}
+          />
           <Divider style={{ margin: '16px 0' }} />
           <Menu
             className='sidebar'
@@ -97,7 +102,6 @@ export function SideBarMenu() {
             theme={theme} // This is not necessary because it uses sider's theme
             inlineCollapsed={collapsed}
           ></Menu>
-          <ToggleThemeButton theme={theme} toggleTheme={toggleTheme} />
         </Sider>
       </Layout>
     </Layout>
