@@ -13,7 +13,7 @@ export function DashboardBase() {
   }
 
   return (
-    <main className='bg-slate-200 p-6 sm:p-10'>
+    <main className='lbg-slate-200 p-6 sm:p-10'>
       <Title>Dashboard</Title>
       <Text>Ejemplo de Dashboard con Tremor y React</Text>
 

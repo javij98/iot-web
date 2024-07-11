@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  padding: 10px;
+  padding: 5px;
 }
 
 .logo-icon {
@@ -33,8 +33,8 @@
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  border-radius: 50%;
-  background-color: rgb(127, 180, 171);
+  /* border-radius: 50%; */
+  /* background-color: rgb(127, 180, 171); */
 }
 
 .header-title {
